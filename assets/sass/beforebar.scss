@@ -1,0 +1,30 @@
+/** 
+ * Before Bar Main Sass File
+ * @author Alexandre Pereira / Twitter alxndr_pereira
+ */
+
+/* Compass Reset import */
+@import "compass";
+@import "compass/reset";
+
+@import "var";
+@import "mixins";
+@import "common";
+@import "header";
+@import "offers";
+@import "cares";
+@import "events";
+@import "press";
+@import "social";
+@import "contact";
+
+@import "pop";
+
+//@TODO : remove that before release (test)
+.section:nth-child(odd){
+    background: grey;
+}
+
+.section:nth-child(even){
+    background: black;
+}

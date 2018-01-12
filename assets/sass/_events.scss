@@ -1,0 +1,149 @@
+/* Events Section SCSS */
+
+#events{
+    background: url(img/offers_background.jpg) no-repeat 0 0;
+    background-size: cover;
+    
+    .section-inner{
+        *{
+            color:black;
+        }
+        
+        .btn:hover{
+            color:white;
+        }
+        
+        .event-inner{
+            margin: 4% 15%;
+            width: 70%;
+            height: 78%;
+            position: relative;
+            
+            @include respond-to(handhelds){
+                width: 80%;
+                margin: 4% 10%;
+                height: 92%;
+            }
+            
+            &>div{
+                width: 50%;
+                position: absolute;
+                
+                @include respond-to(tablet-and-smart){
+                    width: 60%;
+                }
+                
+                @include respond-to(handhelds){
+                    width: 100%;
+                }
+                
+                h2{
+                    margin-left: 0;
+                    
+                    @include respond-to(handhelds){
+                        font-size: 22px;
+                        letter-spacing: 1px;
+                        display: inline-block;
+                    }
+                }
+                
+                a.btn{
+                    @include respond-to(handhelds){
+                         margin: 0 auto;
+                    }
+                }
+                
+                @include respond-to(handhelds){
+                    h2{
+                        color: #cacaca;
+                    }
+                    
+                    *{
+                        display: none;
+                        transition: all .5s;
+                        -webkit-transition: all .5s;
+                    }
+                    
+                    p.norm{
+                        text-align: center;
+                        line-height: 20px;
+                        padding-top: 65%;
+                        background: url(img/private.jpg) no-repeat center 0;
+                        background-size: 60%;
+                        margin-bottom: $spacer_mid;
+                    }
+                    
+                    &.default-active{
+                        h2{ color: black; }
+                        
+                        *{
+                            display: block;
+                        }
+                    }
+                }
+                
+                &:nth-child(3){
+                    bottom: 0;
+                    right: 0;
+                    
+                    @include respond-to(handhelds){
+                        top: 0;
+                        
+                        h2{
+                            width: 100%;
+                            text-align: right;
+                        }
+                        
+                        p.norm{
+                            background: url(img/event.jpg) no-repeat center 0;
+                            background-size: 60%;
+                        }
+                    }
+                    
+                    a.btn{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            
+            &>img{
+                width: 30%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                
+                @include respond-to(handhelds){
+                    display: none;
+                }
+                
+                &:last-child{
+                    left: 0;
+                    bottom: 0;
+                    top: auto;
+                }
+            }
+        }
+        
+        &>img{
+            position: absolute;
+            width: 150px;
+            
+            &.dot1,
+            &.dot2{
+                @include respond-to(tablet-and-smart){
+                    display: none;
+                }
+            }
+            
+            &.dot1{
+                bottom: 10%;
+                left: 10%;
+            }
+
+            &.dot2{
+                top: 10%;
+                right: 10%;
+            }
+        } 
+    }
+}

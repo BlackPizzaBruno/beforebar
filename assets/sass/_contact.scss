@@ -1,0 +1,331 @@
+/* Contacts Section SCSS */
+
+#contactus{
+    background: white;
+    text-align: center;
+    padding-top: 5%;
+    
+    *{
+        color:black;
+    }
+    
+    h2{
+        @include respond-to(handhelds){
+            font-size: 20px;
+        }
+    }
+    
+    .loc-btn{
+        display: inline-block;
+        font-size: 20px;
+        
+        color: #d4d4d4;
+        margin: $spacer_mid $spacer_mid;
+        
+        &.active,
+        &:hover{
+            color:#ff4d59;
+        }
+        
+        @include respond-to(handhelds){
+            margin:15px 5px;
+        }
+    }
+    
+    .contact-top{
+        overflow: hidden;
+        width: 60%;
+        margin: 0 auto;
+        
+        opacity: 0;
+        height: 0;
+        
+        @include respond-to(handhelds){
+            width: 100%;
+            text-align: left;
+        }
+        
+        &.active{
+            opacity: 1;
+            height: auto;
+        }
+        
+        li{
+            float: left;
+            width: 33%;
+            
+            @include respond-to(handhelds){
+                display: block;
+                width: 100%;
+                float: none;
+            }
+            
+            span{
+                font-family: texgyreadventorbold, sans-serif;
+                background: url(img/contact_list_bg.png) no-repeat center 0px;
+                padding-top: 60px;
+                display: inline-block;
+                
+                @include respond-to(handhelds){
+                    display: none;
+                }
+                
+                &.hours{
+                    background-position: 8px 0px;
+                }
+                
+                &.book{
+                    background-position: -146px 0px;
+                }
+            }
+            p{
+                padding: $spacer_min $spacer_mid;
+                
+                @include respond-to(handhelds){
+                    padding: $spacer_min $spacer_mid $spacer_min 70px;
+                    position: relative;
+                    
+                    &::before{
+                        content: '';
+                        width: 38px;
+                        height: 30px;
+                        background: url(img/contact_list_bg.png) no-repeat -35px 0px;
+                        display: block;
+                        position: absolute;
+                        left: 24px;
+                        background-size: 112px;
+                    }
+                }
+            }
+            @include respond-to(handhelds){
+                &:first-child p::before{ background-position: 10px 0px;}
+                &:last-child p::before{ background-position: -80px 0px;}
+            }
+        }
+    }
+    
+    #contact-map{
+        width: 100%;
+        height: 350px;
+        background: grey;
+        margin: 5% 0;
+        position: relative;
+        
+        @include respond-to(tablet-and-smart){
+            // avoiding any scroll on the map
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+            }
+        }
+    }
+
+    .contact-bottom{
+        width: 70%;
+        margin: 0 auto;
+        
+        @include respond-to(handhelds){
+            width: 90%;
+            text-align: justify;
+        }
+        
+        @include respond-to(large-screens){
+            width: 60%;
+        }
+
+        p.norm{
+            margin: 5%;
+        } 
+
+        form{
+            overflow: hidden;
+
+            .left{
+                width: 30%;
+                
+                @include respond-to(handhelds){
+                    width: 100%;
+                }
+
+                li{
+                    display: block;
+                    position: relative;
+                    overflow: hidden;
+                    
+                    label{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: none;
+                    }
+                    
+                    select{
+                        border: none;
+                        box-shadow: none;
+                        background-color: transparent;
+                        background-image: none;
+                        -webkit-appearance: none;
+                           -moz-appearance: none;
+                                appearance: none;
+                        
+                        margin-top: 0 !important;
+                        font-family: texgyreadventorbold, sans-serif;
+                        color:$grey_dark;
+                        text-transform: uppercase;
+                    }
+                    
+                    input,
+                    select{
+                        width: 100%;
+                        background: $grey_light;
+                        padding: $spacer_min*1.5 $spacer_mid;
+                        margin-top: $spacer_min;
+                        border:0;
+                        border-radius: 0;
+                        font-size: 14px;
+                        
+                        &:hover,
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+            }
+            
+            .right{
+                width: 68%;
+                
+                @include respond-to(handhelds){
+                    width: 100%;
+                }
+                
+                textarea{
+                    width: 100%;
+                    height: 128px;
+                    background: $grey_light;
+                    padding: $spacer_min*1.5 $spacer_mid;
+                    border:0;
+                    font-size: 14px;
+                    
+                    &:hover,
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                
+                a.btn{
+                    width: 100%;
+                    max-width: 100%;
+                    margin-top: 9px;
+                    padding: 1em 0;
+                    box-sizing: border-box;
+                    
+                    &:hover{
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+    
+    #footer{
+        background: $grey_light;
+        overflow: hidden;
+        padding: 5% 10%;
+        margin-top: 5%;
+        position: relative;
+        
+        ul{
+            float: left;
+            width: 15%;
+            margin: 5% 2%;
+            
+            &:nth-child(2),
+            &:nth-child(3){
+                @include respond-to(tablet-and-smart){
+                    display: none;
+                }
+            }
+            
+            &:nth-child(1){
+                @include respond-to(tablet-and-smart){   
+                    position: absolute;
+                    bottom: 20px;
+                }
+            }
+            
+            @include respond-to(tablet-and-smart){
+                width: 100%;
+                margin: 0;
+                left: 0;
+            }
+            
+            li{
+                text-align: left;
+                margin: $spacer_min 0;
+                
+                @include respond-to(tablet-and-smart){
+                    display: inline;
+                }
+                
+                &:first-child{
+                    font-family: texgyreadventorbold, sans-serif;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    
+                    @include respond-to(tablet-and-smart){
+                        display: none;
+                    }
+                }
+                
+                a{
+                    font-size: 10px;
+                    font-weight: 600;
+                }
+                
+                .light-content{
+                    width: 0px;
+                    height: 0px;
+                    line-height: 0px;
+                    font-size: 0px;
+                    position: absolute;
+                }
+            }
+        }
+        
+        .foot-social{
+            margin: 5% 0;
+            a{
+                width: 100px;
+                height: 100px;
+                background: url(img/footer_icons.png) no-repeat 0 0;
+                display: inline-block;
+                text-indent: -9999px;
+                margin: 0 2px; 
+                
+                &:hover{
+                    background-position: 0 -110px; 
+                }
+                
+                &:nth-child(2){
+                    background-position: -110px 0; 
+                    
+                    &:hover{
+                        background-position: -110px -110px; 
+                    }
+                }
+                
+                &:last-child{
+                    background-position-x: -218px 0; 
+                    
+                    &:hover{
+                        background-position: -218px -110px; 
+                    }
+                }
+            }
+        }
+    }
+}

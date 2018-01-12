@@ -1,0 +1,24 @@
+/* TEAM */
+                        
+Project Management & Creation : Black Pizza       
+Site: blackpizza.com                 
+Twitter: @blackpizzateam
+Location: Paris, FRANCE.
+
+    The Directors : Kitzia Aguilar Conde & Olivier Derouette
+    The Artist : Johann Lucchini
+    The Apprentice : Augustin Menou
+    On Skype : Chloe Spaleniec
+                
+Code : The Squad. (Alexandre Pereira)              
+Site: http://www.gooood.biz             
+Twitter: @alxndr_pereira      
+Location: Paris, FRANCE.
+                            
+/* SITE */
+                            
+Last update: 2016/01/26                            
+Standards: HTML5, CSS3, ECMA                            
+Components: jQuery, Craft
+
+Software: Vi rocks baby.

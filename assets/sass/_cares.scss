@@ -1,0 +1,188 @@
+/* Cares Section SCSS */
+
+#cares{
+    position: relative;
+    h2{
+        position: absolute;
+        background: url(img/white_sq.png) no-repeat center center;
+        color: black;
+        font-size: 24px;
+        width: 130px;
+        text-align: center;
+        padding: 120px 80px;
+        background-size: contain;
+        
+        left:50%;
+        top:50%;
+        margin: -156px 0 0 -145px;
+        
+        @include respond-to(handhelds){
+            width: 100px;
+            padding: 94px 80px;
+            margin: -130px 0 0 -130px;
+        }
+    }
+    ul{
+        height: 100%;
+        overflow: hidden;
+        
+        li{
+            display:inline-block;
+            width: 50%;
+            height: 50%;
+            float: left;
+            cursor: pointer;
+            
+            &.hair{
+                background:#f2acb1 url(img/care_hair.jpg) no-repeat center left;
+                background-size: 65%;
+                
+                @include respond-to(tablet-and-smart){
+                    background-size: cover !important;
+                }
+                
+                a{
+                    background: #f2acb1;
+                }
+                
+                .align-v-mid h3.title::before{
+                    background-position: -23px -4px;
+                }
+            }
+            
+            &.nails{
+                background:#47c3c2 url(img/care_nails.jpg) no-repeat center left;
+                background-size: 65%;
+                
+                @include respond-to(tablet-and-smart){
+                    background-size: cover !important;
+                }
+                
+                a{
+                    background: #47c3c2;
+                }
+                
+                .align-v-mid h3.title::before{
+                    background-position: -120px -4px;
+                }
+            }
+            
+            &.make{
+                background:#ff4d58 url(img/care_make.jpg) no-repeat center left;
+                background-size: 65%;
+                
+                @include respond-to(tablet-and-smart){
+                    background-size: cover !important;
+                }
+                
+                a{
+                    background: #ff4d58;
+                }
+                
+                .align-v-mid h3.title::before{
+                    background-position: -20px -120px;
+                }
+            }
+            
+            &.spa{
+                background:#77c79d url(img/care_spa.jpg) no-repeat center left;
+                background-size: 65%;
+                
+                @include respond-to(tablet-and-smart){
+                    background-size: cover !important;
+                }
+                
+                a{
+                    background: #77c79d;
+                }
+                
+                .align-v-mid h3.title::before{
+                    background-position: -120px -117px;
+                }
+            }
+            
+            &.care_left{
+                background-position: center right;
+                
+                a{
+                    margin-left: 0;
+                    margin-right: 50%;
+                }
+            }
+            
+            a{
+                width: 50%;
+                height: 100%;
+                min-height: 100%;
+                display: inline-block;
+                margin-left: 50%;
+                
+                @include respond-to(handhelds){
+                    width: 100%;
+                    margin: 0;
+                    background-color: transparent !important;
+                }
+            }
+            
+            .align-v-mid{
+                text-align: center;
+                
+                h3{
+                    display: block;
+                    
+                    &.title{
+                        text-transform: uppercase;
+                        margin-top: 40px;
+                        
+                        @include respond-to(handhelds){
+                            font-size: 20px;
+                            text-shadow: 0px 0px 13px rgba(0,0,0,0.5);
+                            margin: 0 20px;
+                        }
+                        
+                        &::before{
+                            content: '';
+                            width: 60px;
+                            height: 80px;
+                            background: url(img/cares_icons.png) no-repeat center center;
+                            display: inline-block;
+                            position: absolute;
+                            left: 50%;
+                            margin-left: -30px;
+                            margin-top: -90px;
+                            background-position: -23px -4px;
+                            background-size: 200px;
+                            
+                            @include respond-to(handhelds){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                
+                span.more{
+                    bottom: -70px;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    font-size: 14px;
+                }
+            }
+            
+            transition: background-size .5s;
+            -webkit-transition: background-size .5s;
+            
+            &:hover{
+                background-size: 70%;
+                
+                @include respond-to(tablet-and-smart){
+                    background-size: cover !important;
+                }
+            }
+        }
+    }
+}
+
+.contentpop{
+    display: none;
+}

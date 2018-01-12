@@ -1,0 +1,292 @@
+/** 
+ * Before Bar Common Sass File
+ * @author Alexandre Pereira / Twitter alxndr_pereira
+ */
+
+*{
+    color:white;
+}
+
+@import "loader";
+
+a{
+    font-family: texgyreadventorregular, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+h2,
+.light-ttl{
+    font-size: 50px;
+    font-weight: 600;
+    margin: $spacer_mid 0;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    
+    @include respond-to(tablet-and-smart){
+        font-size: 35px;
+    }
+}
+
+.section{
+    position: relative;
+    
+    *{
+        font-family: texgyreadventorregular, sans-serif;
+    }
+    
+    .section-inner{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    p.norm{
+        color:$grey_mid !important;
+        font-size: 13px;
+        line-height: 28px;
+        margin-bottom: $spacer_max;
+        
+        @include respond-to(medium-screens){
+            margin-bottom: $spacer_mid;
+        }
+    }
+    
+    &.huge{
+        text-align: center;
+        
+        .huge_txt{
+            position: absolute;
+            top: 50%;
+            
+            width: 100%;
+            
+            z-index: 10;
+            
+            h2{
+                font-size: 80px;
+                font-weight: 100;
+                letter-spacing: 20px;
+                text-transform: uppercase;
+                color:white;
+                
+                margin: $spacer_mid;
+                
+                transition: color 1s;
+                -webkit-transition: color 1s;
+                
+                &.black{
+                    color:black;
+                }
+                
+                @include respond-to(tablet-and-smart){
+                    font-size: 55px;
+                }
+                
+                @include respond-to(handhelds){
+                    font-size: 30px;
+                    letter-spacing: 15px;
+                    margin: $spacer_mid 0;
+                }
+            }
+            p{
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                width: 80%;
+                line-height: 28px;
+                margin: $spacer_mid auto;
+                
+                @include respond-to(handhelds){
+                    text-transform: none;
+                }
+            }
+            a{
+                margin-top: $spacer_max;
+                display: inline-block;
+                
+                @include respond-to(handhelds){
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.o-0{
+    opacity: 0 !important;
+}
+
+.arrow{
+    background: url(img/arrows.png) no-repeat center center;
+    width: 52px;
+    height: 52px;
+    left:50%;
+    margin-left: -26px;    
+    display: inline-block;
+    position: absolute;
+    bottom: $spacer_max;
+    background-position: -52px center;
+    background-size: cover;
+    z-index: 10;
+    
+    &.white{
+        background-position: 2px center; 
+    }
+    
+    &:hover{
+        background-position: -108px center; 
+    }
+    
+    @include respond-to(smallheight){
+        display: none;
+    }
+}
+
+.btn{
+    font-family: texgyreadventorbold, sans-serif;
+    border: 3px solid;
+    min-width: 150px;
+    max-width: 250px;
+    display: inline-block;
+    margin: 1em 0;
+    padding: 1em 2em;
+    font-size: 14px;
+    background: none;
+    color: inherit;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    color:black;
+    border-color:black;
+    overflow: hidden;
+    text-align: center;
+    width: 170px;
+    
+    @include respond-to(handhelds){
+        max-width: 150px;
+        font-size: 13px;
+        border: 2px solid;
+    }
+    
+    &.btn-white{
+        color:white;
+        border-color: white;
+        
+        &:hover{
+            color:black;
+        }
+        
+        &::before{
+            background: white;
+        }
+    }
+    
+    &.btn-white-full{
+        color:black;
+        border-color: white;
+        background: white;
+        
+        &:hover{
+            color:white;
+            background: none;
+        }
+        
+        &::before{
+            background: none;
+        }
+    }
+    
+    &.btn-black-full{
+        color:white;
+        border-color: black;
+        background: black;
+        
+        &:hover{
+            color:white;
+            background: none;
+        }
+        
+        &::before{
+            background: none;
+        }
+    }
+    
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 180%;
+        height: 100%;
+        background: black;
+        z-index: -1;
+        -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+        -ms-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+        transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+        -webkit-transform-origin: 0% 100%;
+        -ms-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+        -ms-transition: -ms-transform 0.3s, opacity 0.3s, background-color 0.3s;
+        transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+    }
+    
+    &:hover{
+        color:white;
+        
+        &::before{
+            opacity: 1;
+            -ms-transform: rotate3d(0, 0, 1, 0deg);
+            -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+            -ms-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        }
+    }
+}
+
+.rdv-detail{
+    width: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    height: 0px;
+
+    transition: all .5s;
+    -webkit-transition: all .5s;
+
+    &.show{
+        width: 100%;
+        height: 63px;
+    }
+}
+
+.big{
+    font-family: texgyreadventorbold, sans-serif;
+}
+
+.gr{
+    overflow: hidden;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.align-v-mid{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+@import 'sliders';
+@import 'fonts';

@@ -1,0 +1,172 @@
+/* Press Section SCSS */
+
+#press{
+    background: url(img/press_background.jpg) no-repeat 0 0;
+    background-size: cover;
+    
+    .section-inner{
+        margin: 0% 15%;
+        width: 70%;
+        height: 60%;
+        padding: 10% 0;
+        
+        @include respond-to(tablet-and-smart){
+            margin: 0% 10%;
+            width: 80%;
+        }
+        
+        @include respond-to(handhelds){
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        *{
+            color: black;
+        }
+        
+        .btn:hover{
+            color: white;
+        }
+        
+        .left{
+            width: 50%;
+            
+            @include respond-to(handhelds){
+                width: 100%;
+                text-align: center;
+                
+                *:not(h2){
+                    display: none;
+                }
+            }
+        }
+        
+        .right{
+            overflow: hidden;
+            height: 100%;
+            
+            @include respond-to(handhelds){
+                margin: 0;
+                left: 0;
+                width: 90%;
+                top: 100px;
+            }
+            
+            img{
+                width: 100%;
+            }
+            
+            .detail{
+                position: absolute;
+                top: 110%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                
+                transition: top .5s;
+                -webkit-transition: top .5s;
+                
+                text-align: center;
+                
+                background: rgba(0,0,0,0.8);
+                
+                span{
+                    color:white;
+                    padding-top: $spacer_max*2;
+                    
+                    background: url(img/press_icon.png) no-repeat top center;
+                    
+                    font-size: 14px;
+                }
+            }
+            
+            .press-art{
+                opacity: 0;
+                position: absolute;
+                
+                &.active{
+                    opacity: 1;
+                }
+            }
+            
+            &:hover{
+                .detail{
+                    top:0%;
+                }
+            }
+        }
+    }
+    
+    .pop{
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: 0;
+        width: 40%;
+        
+        @include respond-to(tablet-and-smart){
+            width: 50%;
+        }
+        
+        transition: width .5s, margin-left .5s;
+        -webkit-transition: width .5s, margin-left .5s;
+        
+        .press-info{
+            float:left;
+            width: 10%;
+            opacity: 0;
+            
+            span{
+                display: block;
+                text-align: right;
+                margin-right: 20px;
+            }
+            
+            transition: opacity .5s;
+            -webkit-transition: opacity .5s;
+        }
+        
+        .press-content{
+            float: left;
+            width: 80%;
+            position: relative;
+            overflow: hidden;
+            
+            @include respond-to(tablet-and-smart){
+                width: 90%;
+            }
+        }
+        
+        .popctrl{
+            display: inline-block;
+            opacity: 0;
+            
+            transition: opacity .5s;
+            -webkit-transition: opacity .5s;
+            
+            position: absolute;
+            right: 0;
+        }
+        
+        &.active{            
+            width: 60%;
+            margin-left: -30%;
+            top:95px;
+            
+            @include respond-to(large-screens){
+                width: 50%;
+                margin-left: -25%;
+            }
+            
+            @include respond-to(tablet-and-smart){
+                top: 25px;
+            }
+            
+            .detail{ top: 110% !important; }
+            .press-info{ opacity: 1; }
+            .popctrl{ opacity: 1; }
+        }
+    }
+}

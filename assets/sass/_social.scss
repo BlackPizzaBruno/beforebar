@@ -1,0 +1,188 @@
+/* Social Section SCSS */
+
+#social{
+    background: black;
+    
+    .section-inner{
+        .insta-txt{
+            height: 100%;
+        }
+        
+        .insta-line{
+            position: absolute;
+            bottom: 0;
+            
+            &:first-child{
+                top: 0;
+                bottom: auto;
+            }
+            
+            .insta{
+                display: inline-block;
+                width: 20%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                
+                @include respond-to(handhelds){
+                    width: 50%;
+                }
+                
+                img{
+                    width: 100%;
+                }
+                
+                &:hover{
+                    .insta-desc{
+                        top:0%;
+                    }
+                }
+                @include respond-to(medium-screens){
+                    width: 25%;
+                    height: 25%;
+                }
+                &:last-child{
+                    @include respond-to(tablet-and-smart){
+                        display: none;
+                    }
+                }
+                
+                &:nth-child(n+3){
+                    @include respond-to(handhelds){
+                        display: none;
+                    }
+                }
+                
+                .insta-desc{
+                    position: absolute;
+                    background: rgba(0,0,0,0.8);
+                    height: 100%;
+                    width: 100%;
+                    top: 100%;
+                    left: 0;
+                    
+                    transition: top .5s;
+                    -webkit-transition: top .5s;
+                    
+                    @include respond-to(handhelds){
+                        display: none;
+                    }
+                    
+                    p{
+                        font-size: 10px;
+                        margin: 0 $spacer_mid;
+                        line-height: 16px;
+                        text-transform: uppercase;
+                        
+                        @include respond-to(large-screens){
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
+                    }
+                    span{
+                        display: inline-block;
+                        font-size: 18px;
+                        margin: 10px;
+                        padding: 15px 0 15px 70px;
+                        background: url("img/insta_icons.png") no-repeat left center;
+                        background-position: center 10px;
+                        
+                        &:last-child{
+                            background-position: center -40px;
+                        }
+                    }
+                }
+            }
+        }
+        &>div{
+            height: auto;
+            width: 100%;
+            overflow: hidden;
+
+            text-align: center;
+            
+            h2{
+                margin: 0 0 $spacer_mid 0;
+                font-size: 60px;
+                letter-spacing: 24px;
+                margin: 0;
+                
+                @include respond-to(handhelds){
+                    font-size: 30px;
+                    letter-spacing: 10px;
+                }
+            }
+            
+            h3{
+                margin: 25px 0;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-size: 18px;
+                
+                @include respond-to(handhelds){
+                    letter-spacing: 0px;
+                    font-size: 13px;
+                }
+                
+                @include respond-to(smallheight){
+                    display: none;
+                }
+            }
+        }
+        ul{
+            li{
+                display: inline-block;
+                
+                &:first-child{
+                    margin-right: $spacer_mid;
+                    
+                    
+                }
+                
+                &:last-child{
+                    a{
+                        padding: 1em 2em;
+                        min-width: 100px;
+                        width: 100px;
+                    
+                        &::after{
+                            background: url(img/fb_sprite.png) no-repeat left 2px;
+                            left: 20%;
+                        }
+                    }
+                }
+                
+                a{
+                    padding: 1em 3em;
+                    text-align: right;
+                    width: 70px;
+                    min-width: 70px;
+                    margin-bottom: 0;
+                    
+                    @include respond-to(handhelds){
+                        min-width: 40%;
+                        width: 40%;
+                    }
+                    
+                    &::after{
+                        content: '';
+                        background: url(img/insta_sprite.png) no-repeat center 2px;
+                        width: 30px;
+                        height: 30px;
+                        display: inline-block;
+                        position: absolute;
+                        top: 5px;
+                        left: 24%;
+                        background-position: center 2px;
+                    }
+                    
+                    &:hover{
+                        &::after{
+                            background-position: center -47px;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}

@@ -1,0 +1,233 @@
+/* Offers Section SCSS */
+
+#offers{
+    background: url(img/offers_background.jpg) no-repeat 0 0;
+    background-size: cover;
+    
+    transition: background .5s;
+    -webkit-transition: background .5s;
+    
+    .section-inner{
+        *{
+            color: black;
+            
+            @include respond-to(tablet-and-smart){
+                display: none;
+            }
+        }
+        
+        text-align: center;
+        position:absolute;
+        
+        h2{
+            margin-top: 120px;
+            
+            @include respond-to(tablet-and-smart){
+                display: block !important;
+                font-size: 30px;
+                color:white;
+            }
+            
+            @include respond-to(handhelds){
+                width: 70%;
+                margin: 20px auto;
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        
+        .arrow{
+            @include respond-to(tablet-and-smart){
+                display: block !important;
+                background-position: 2px center; 
+            }
+            
+            @include respond-to(handhelds){
+                display: none !important;
+            }
+        }
+        
+        p{            
+            a{
+                color: $grey_mid;
+                text-transform: none;
+                text-decoration: underline;
+            }
+        }
+        
+        ul{
+            margin: $spacer_min;
+            
+            @include respond-to(large-screens){
+                margin: $spacer_max;
+            }
+            
+            @include respond-to(medium-screens){
+                width: 80%;
+                margin: 0 auto;
+            }
+            
+            li{
+                *{
+                    color:white;
+                }
+            
+                display: inline-block;
+                border-radius: 100%;
+                border:solid 2px white;
+                margin: $spacer_min;
+                
+                transition: background-color .5s, padding .5s;
+                -webkit-transition: background-color .5s, padding .5s;
+                
+                &.events{
+                    background-color: $offers_pink;
+                }
+                
+                &.dating{
+                    background-color: $offers_fush;
+                }
+                
+                &.wedding{
+                    background-color: $offers_yellow;
+                }
+                
+                &.beach{
+                    background-color: $offers_green;
+                }
+                
+                &:hover{
+                    background-color: white;
+                    border:solid 2px black;
+                    
+                    *{
+                        color:black;
+                    }
+                    
+                    a{
+                        p{
+                            opacity: 0;
+                            height: 0;
+                        }
+                        
+                        span.logo{
+                            background-position: center -20px; 
+                        }
+                        
+                        span.link{
+                            opacity: 1;
+                        }
+                    }
+                }
+                
+                a{
+                    width: 160px;
+                    height: 160px;
+                    display: inline-block;
+                    padding: $spacer_mid;
+                    overflow: hidden;
+                    padding-top: 25px;
+                    
+                    @include respond-to(large-screens){
+                        width: 200px;
+                        height: 200px;
+                    }
+                    
+                    span.logo{
+                        background: url(img/before_small.png) no-repeat center center;
+                        display: inline-block;
+                        width: 100%;
+                        height: 60px;
+                        background-position: center -110px;
+                    }
+                    
+                    &>div{
+                        margin: $spacer_min;
+                        height: 40px;
+                        
+                        @include respond-to(large-screens){
+                            height: 60px;
+                        }
+                        
+                        h3{
+                            font-size: 28px;
+                            display: inline-block;
+                            letter-spacing: 2px;
+                            
+                            @include respond-to(large-screens){
+                                height: 30px;
+                            }
+                        }
+                    }
+                    
+                    p{
+                        height: 100px;
+                        font-size: 13px;
+                        line-height: 18px;
+                        opacity: 1;
+                        text-transform: none;
+                        
+                        transition: opacity .5s;
+                        -webkit-transition: opacity .5s;
+                    }
+                    
+                    .offer-desc,
+                    .offer-price{
+                        font-size: 0px;
+                        line-height: 0px;
+                        height: 0px;
+                    }
+                    
+                    span.link{
+                        height: 20px;
+                        opacity:0;
+                        text-transform: none;
+                        
+                        border-bottom:solid 2px black;
+                        
+                        transition: opacity .5s;
+                        -webkit-transition: opacity .5s;
+                    }
+                }
+            }
+        }
+        
+        .dot1,
+        .dot2{
+            position:absolute;
+            
+            @include respond-to(tablets-and-smart){
+                display: none;
+            }
+        }
+        
+        .dot1{
+            top: $spacer_max*2;
+            right: $spacer_max;
+            height: 200px;
+        }
+        
+        .dot2{
+            bottom: $spacer_max;
+            left: $spacer_max;
+        }
+    }
+    
+    @include respond-to(tablet-and-smart){
+        &.events{
+            background: $offers_pink;
+        }
+
+        &.dating{
+            background: $offers_fush;
+        }
+
+        &.wedding{
+            background: $offers_yellow;
+        }
+
+        &.beach{
+            background: $offers_green;
+        }
+    }
+}

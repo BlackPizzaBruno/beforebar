@@ -1,0 +1,262 @@
+/** 
+ * Before Bar Header Sass File
+ * @author Alexandre Pereira / Twitter alxndr_pereira
+ */
+
+header{    
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    
+    background-color: transparent;
+    
+    transition: background-color .5s;
+    -webkit-transition: background-color .5s;
+    
+    .rdv-top{
+        display: none;
+        
+        @include respond-to(handhelds){
+            position: fixed;
+            display: block;
+            top: 14px;
+            right: 0;
+            
+            border-top: solid 1px;
+            border-bottom: solid 1px;
+            
+            padding: 8px;
+            margin: 5px 0;
+            
+            text-align: center;
+            font-size: 14px;
+            
+            &.rdv-top-black{
+                border-color: black;
+                color: black;
+            }
+        }
+    }
+    
+    .bar-container{
+        display: none;
+        
+        @include respond-to(tablet-and-smart){
+            display: block;
+        }
+        
+        position:fixed;
+        top:10px;
+        
+        height: 45px;
+        width: 45px;
+        
+        z-index: 2000000;
+        
+        .bar{
+            height:1px;
+            width:45px;
+            background-color:white;
+        
+            &:before,
+            &:after{
+              transition:all .25s;
+              content:"";
+              position:absolute;
+              left:0;
+              height:1px;
+              width:45px;
+              background-color:white; 
+            }
+
+            &:before {
+              top:-12px;
+            }
+            &:after {
+              top:12px;
+            }
+
+            &.bar-black{
+                background-color: black;
+
+                &:before,
+                &:after{
+                  background-color: black;
+                }
+            }
+        }
+    }
+    
+    img{
+        position: absolute;
+        left: 50%;
+        margin-left: -60px;
+        width: 120px;
+        
+        @include respond-to(tablet-and-smart){
+            margin-left: -114px;
+            width: auto;
+            margin-top: $spacer_mid;
+        }
+        
+        @include respond-to(handhelds){
+            margin-left: -70px;
+            width: 140px;
+        }
+        
+        @include respond-to(large-screens){
+            margin-left: -120px;
+            width: 240px;
+        }
+    }
+    
+    nav{
+        margin: $spacer_mid;
+        line-height: 75px;
+        text-align: center;
+        
+        transition: line-height 1s, margin 1s;
+        -webkit-transition: line-height 1s, margin 1s;
+        
+        @include respond-to(tablet-and-smart){
+            position: fixed;
+            background: rgba(0,0,0,0.8);
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            
+            display: none;
+        }
+        
+        ul{
+            @include respond-to(tablet-and-smart){
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+            }
+            
+            li{
+                display: inline;
+                margin: 0 $spacer_min/2;
+                
+                &:nth-child(3){
+                    margin-right: 8%;
+                    @include respond-to(large-screens){ margin-right: 12%; }
+                }
+                
+                &:nth-child(4){
+                    margin-left: 8%;
+                    @include respond-to(large-screens){ margin-left: 12%; }
+                }
+                
+                @include respond-to(tablet-and-smart){
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    margin: 0 !important;
+                }
+                
+                @include respond-to(smallheight){
+                    line-height: 35px;
+                }
+                
+                a{
+                    padding: 0 $spacer_min/2;
+                    font-size: 14px;
+                    background-size: 0px;
+                    
+                    transition: background-size .2s;
+                    -webkit-transition: background-size .2s;
+                    
+                    &:hover{
+                        background-size: 10px;
+                        background: url(img/white_line.png) repeat-x center center;
+                    }
+                }
+            }
+        }
+    }
+    
+    &.stick{
+        background-color: rgba(255,255,255,0.9);
+        top:0;
+        
+        transition: top .5s linear 1s;
+        -webkit-transition: top .5s linear 1s;
+        
+        img{ display: none; }
+        
+        nav{
+            margin: $spacer_mid/2;
+            line-height: 30px;
+            background: url(img/logo_dots_orange.png) no-repeat center center;
+            
+            a{
+                color:black;
+                background-size: 0px;
+
+                &:hover{
+                    background: url(img/black_line.png) repeat-x center center;
+                    background-size: 10px;
+                }
+            }
+        }
+        
+        &.hide{
+            top:-60px;
+        }
+    }
+    
+    &.expanded{
+        .bar {
+            background-color:transparent !important;
+            transition:all .25s;
+            
+            &:before {
+                transition:all .25s;
+                content:"";
+                transform:rotate(45deg);
+                -webkit-transform:rotate(45deg);
+                -ms-transform:rotate(45deg);
+                top:-0px;
+                background-color: white !important;
+            }
+            &:after {
+                transition:all .25s;
+                content:"";
+                transform:rotate(-45deg);
+                -webkit-transform:rotate(-45deg);
+                -ms-transform:rotate(-45deg);
+                top:0px;
+                background-color: white !important;
+            }
+        }
+    }
+}
+
+#present{
+    #slider_cover{ 
+        @include respond-to(handhelds){
+            background: url(img/slides/cover_1.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+        
+        *{
+            opacity: 1;
+            transition: opacity .7s;
+            -webkit-transition: opacity .7s;
+        }
+        
+        .huge_txt p{
+            @include respond-to(handhelds){
+                display: none;
+            }
+        }
+    }
+}

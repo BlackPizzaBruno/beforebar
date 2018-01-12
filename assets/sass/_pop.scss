@@ -1,0 +1,518 @@
+/* Popin Classes */
+
+.pop{
+    position: absolute;
+    display: none;
+    z-index: 2000;
+}
+
+#carespop{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    
+    .left,
+    .right{
+        width: 50%;
+        height: 100%;
+        min-width: 50%;
+        min-height: 100%;
+    }
+    
+    .left{
+        background: white;
+        margin-left: -50%;
+        
+        transition: margin-left .5s, background .5s;
+        -webkit-transition: margin-left .5s, background .5s;
+        
+        @include respond-to(handhelds){
+            display: none;
+        }
+    }
+    
+    .right{
+        position: relative;
+        
+        @include respond-to(handhelds){
+            width: 100%;
+        }
+        
+        .cares-r-t{
+            background: white;
+            height: 55%;
+            
+            margin-top: -100%;
+            
+            text-align: center;
+        
+            transition: margin-top .5s, background .5s;
+            -webkit-transition: margin-top .5s, background .5s;
+            
+            @include respond-to(handhelds){
+                height: 100%;
+            }
+            
+            span, p{
+                font-family: texgyreadventorregular, sans-serif;
+            }
+            
+            p{
+                font-size: 14px;
+                line-height: 24px;
+                width: 70%;
+                margin: 20px auto;
+                
+                @include respond-to(handhelds){
+                    line-height: 18px;
+                }
+            }
+            
+            span.cares-c-ttl{
+                font-size: 30px;
+                text-transform: uppercase;
+                
+                margin-top: 80px;
+                display: inline-block;
+                position: relative;
+                
+                &::before{
+                      content: '';
+                      width: 60px;
+                      height: 80px;
+                      background: url(img/cares_icons.png) no-repeat center center;
+                      display: inline-block;
+                      position: absolute;
+                      left: 50%;
+                      margin-left: -30px;
+                      margin-top: -90px;
+                      background-position: -23px -4px;
+                      background-size: 200px;
+                }
+            }
+        }
+        .cares-r-b{
+            background: white;
+            
+            position: absolute;
+            bottom: 0;
+            right: -100%;
+            
+            min-height: 45%;
+            min-width: 100%;
+            height: 45%;
+            width: 100%;
+        
+            transition: right .5s, background .5s;
+            -webkit-transition: right .5s, background .5s;
+            
+            @include respond-to(handhelds){
+                display: none;
+            }
+        }
+    }
+    
+    &.active{
+        .left{ margin-left: 0;}
+        .right .cares-r-t{ margin-top: 0; }
+        .right .cares-r-b{ right: 0; }
+        .popctrl{ right: 0; }
+    }
+    
+    &.hair {
+        .left{
+            background: url(img/pop/cares_hair_1.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+        .cares-r-t{
+            background: #f2acb1;
+            
+            span.cares-c-ttl::before{
+                background-position: -23px -4px;
+            }
+        }
+        .cares-r-b{
+            background: url(img/pop/cares_hair_2.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+    &.nails{
+        .left{
+            background: url(img/pop/cares_nails_1.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+        .cares-r-t{
+            background: #47c3c2;
+            
+            span.cares-c-ttl::before{
+                background-position: -120px -4px;
+            }
+        }
+        .cares-r-b{
+            background: url(img/pop/cares_nails_2.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+    &.make{
+        .left{
+            background: url(img/pop/cares_make_1.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+        .cares-r-t{
+            background: #ff4d58;
+            
+            span.cares-c-ttl::before{
+                background-position: -20px -120px;
+            }
+        }
+        .cares-r-b{
+            background: url(img/pop/cares_make_2.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+    &.spa{
+        .left{
+            background: url(img/pop/cares_spa_1.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+        .cares-r-t{
+            background: #77c79d;
+            
+            span.cares-c-ttl::before{
+                background-position: -120px -117px;
+            }
+        }
+        .cares-r-b{
+            background: url(img/pop/cares_spa_2.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+    
+    .popctrl{
+        position: absolute;
+        top: 0;
+        right: -50%;
+        transition: right .5s;
+        -webkit-transition: right .5s;
+    }
+}
+
+#lightpop{
+    min-height: 100%;
+    height: 100%;
+    min-width: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    
+    background-color: #fff6f6;
+    
+    .inner-light{
+        background: white;
+        
+        width: 70%;
+        height: 70%;
+        margin: auto;
+        
+        position: relative;
+        overflow: hidden;
+        
+        .left{
+            margin-left: 40px;
+            margin-top: 40px;
+            margin-right: 40px;
+            width: 32%;
+            
+            img{
+                width: 100%;
+            }
+        }
+        
+        .light-right{
+            margin-top: 40px;
+            margin-left: 40px;
+            
+            span.light-ttl{
+                margin-bottom: $spacer_mid;
+                display: block;
+            }
+            
+            span, p{
+                color:black;
+                font-family: texgyreadventorregular, sans-serif;
+            }
+            
+            p{
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    
+    .light-close{
+        position: absolute;
+        top:20px;
+        right: 20px;
+        
+        background: url(img/light_close.jpg) no-repeat 0 0;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+    }
+    
+    &.active{
+        display: block;
+    }
+}
+
+#offerspop{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    
+    @include respond-to(tablet-and-smart){
+        height: 60%;
+        min-height: 60%;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+    }
+    
+    @include respond-to(handhelds){
+        height: 100%;
+        min-height: 80%;
+    }
+        
+    .left,
+    .right{
+        width: 50%;
+        height: 100%;
+        min-width: 50%;
+        min-height: 100%;
+    }
+    
+    .left{
+        text-align: center;
+        background: white;
+        margin-top: -50%;
+        
+        transition: margin-top .5s, background .5s;
+        -webkit-transition: margin-top .5s, background .5s;
+        
+        span{
+            display: block;
+            font-family: texgyreadventorregular, sans-serif;
+            
+            &.offerspop-ttl{
+                font-size: 40px;
+                text-transform: uppercase;
+                margin:$spacer_max 0;
+                background: url(img/before_small.png) no-repeat center -130px;
+                padding-top: 40px;
+            }
+            
+            &.offerspop-desc{
+                margin: $spacer_max 0;
+                
+                @include respond-to(handhelds){
+                    padding-top: 210px;
+                }
+                
+                @include respond-to(smallheight){
+                    padding-top: 40px;
+                    background: none !important;
+                }
+            }
+            
+            &.offerspop-price{
+                font-size: 24px;
+                margin: $spacer_max*3 0;
+                
+                @include respond-to(tablet-and-smart){
+                    margin: $spacer_max 0;
+                    font-size: 18px;
+                }
+            }
+        }
+        
+        @include respond-to(tablet-and-smart){
+            background-color: transparent !important;
+        }
+        
+        @include respond-to(handhelds){
+            width: 100%;
+        }
+    }
+    
+    .right{
+        text-align: center;
+        background: white;
+        margin-right: -50%;
+        
+        transition: margin-right .5s, background .5s;
+        -webkit-transition: margin-right .5s, background .5s;
+        
+        @include respond-to(tablet-and-smart){
+            background-size: 50% !important;
+            background-position: center center !important;
+        }
+        
+        @include respond-to(handhelds){
+            display: none;
+        }
+    }
+    
+    &.events{
+        .left{
+            background-color: $offers_pink;
+            
+            @include respond-to(handhelds){    
+                .offerspop-desc{
+                    background: url(img/pop/offers_1.jpg) no-repeat center 0;
+                    background-size: 130px;
+                }
+            }
+        }
+        
+        .right{
+            background: url(img/pop/offers_1.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+
+    &.dating{
+        .left{
+            background-color: $offers_fush;
+            
+            @include respond-to(handhelds){    
+                .offerspop-desc{
+                    background: url(img/pop/offers_2.jpg) no-repeat center 0;
+                    background-size: 130px;
+                }
+            }
+        }
+        
+        .right{
+            background: url(img/pop/offers_2.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+
+    &.wedding{
+        .left{
+            background-color: $offers_yellow;
+            
+            @include respond-to(handhelds){    
+                .offerspop-desc{
+                    background: url(img/pop/offers_3.jpg) no-repeat center 0;
+                    background-size: 130px;
+                }
+            }
+        }
+        
+        .right{
+            background: url(img/pop/offers_3.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+
+    &.beach{
+        .left{
+            background-color: $offers_green;
+            
+            @include respond-to(handhelds){    
+                .offerspop-desc{
+                    background: url(img/pop/offers_4.jpg) no-repeat center 0;
+                    background-size: 130px;
+                }
+            }
+        }
+        
+        .right{
+            background: url(img/pop/offers_4.jpg) no-repeat 0 0;
+            background-size: cover;
+        }
+    }
+
+    
+    &.active{
+        .left{ margin-top: 0;}
+        .right{ margin-right: 0;}
+        .popctrl{ right: 0; }
+    }
+    
+    .popctrl{
+        position: absolute;
+        top: 0;
+        right: -50%;
+        transition: right .5s;
+        -webkit-transition: right .5s;
+        
+        @include respond-to(tablet-and-smart){
+            width: 100%;
+            height: 50px;
+            background: none;
+            top: 50%;
+            margin-top: -25px;
+        }
+        
+        span{
+            @include respond-to(tablet-and-smart){
+                min-height: 50px;
+                height: 50px;
+                min-width: 50px;
+                width: 50px;
+                background-size: 60px;
+                
+                &.popnext{
+                    float: right;
+                }
+                &.popclose{
+                    display: none;
+                }
+            }
+        }
+        
+        
+    }
+}
+
+.popctrl{
+    background: rgba(0,0,0,0.15);
+    width: 40px;
+    
+    span{
+        display: block;
+        
+        min-height: 40px;
+        height: 40px;
+        min-width: 40px;
+        width: 40px;
+        
+        background: url(img/popcontrol.png) center center;
+        background-size: 50px;
+        
+        cursor: pointer;
+        
+        &:hover{
+            opacity: 0.6;
+        }
+        
+        &.popclose{
+            background: rgba(0,0,0,0.15) url(img/popcontrol.png) center -5px;
+            background-size: 50px;
+        }
+        &.popnext{
+            background-position: center 45px;
+        }
+    }
+}

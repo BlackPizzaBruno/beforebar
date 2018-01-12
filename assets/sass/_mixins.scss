@@ -1,0 +1,34 @@
+/* Before SCSS Mixins */
+
+// Media Queries instances
+@mixin respond-to($media) {
+  @if $media == handhelds-small{
+    @media only screen and (max-height: $break-verysmall) { @content; }
+  }
+  @if $media == smallheight{
+    @media only screen and (max-height: $break-verysmall-h) { @content; }
+  }
+  @else if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == tablet-and-smart {
+    @media only screen and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+  @else if $media == large-screens {
+    @media only screen and (min-width: $break-verylarge) and (min-height: $break-verylargeh - 1) { @content; }
+  }
+}
+
+// Placeholders Styles
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
